@@ -44,7 +44,7 @@
      - Statistical methods
      - Computational details
      - Code availability statement
-   - **References**: Only cited works
+   - **References**: Don't include references in the manuscript.
 
 3. Create publication-ready figures:
    - Main figures (3-4): Core results with high visual impact
