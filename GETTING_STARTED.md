@@ -31,29 +31,7 @@ cd aria
 
 ## Step 2: Set Up Python Environment
 
-### Using UV (Recommended)
-
-1. Install UV if you haven't already:
-
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-2. Create a virtual environment and install dependencies:
-
-```bash
-uv venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-uv sync
-```
-
-### Using pip (Alternative)
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install -r requirements.txt  # You may need to generate this from pyproject.toml
-```
+See [INSTALL.md](./INSTALL.md) for more details.
 
 ## Step 3: Project Structure Setup
 
@@ -62,7 +40,7 @@ Create the necessary directories if they don't exist:
 ```bash
 mkdir -p data/raw data/processed
 mkdir -p docs
-mkdir -p output/{models,results,figures,logs}
+mkdir -p data/output/{models,results,figures,logs}
 ```
 
 ## Step 4: Prepare Your Data
