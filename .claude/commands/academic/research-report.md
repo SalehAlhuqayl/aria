@@ -7,7 +7,7 @@
 - Basic information: `docs/01-basic-information.md`
 - All analysis documents in `docs/`
 - Experiment report: `docs/09-experiment-report.md`
-- Output results in `output/`
+- Output results in `data/output/`
 
 ## Style
 
