@@ -1,5 +1,7 @@
 # ARIA - 自动化研究智能助手
 
+**🚀 Transform months of research into minutes of insight**
+
 [English](./README.md) | 中文
 
 ARIA 是一个用于科学数据分析、可视化和报告生成的自动化研究助手框架。

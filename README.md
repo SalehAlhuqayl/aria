@@ -1,6 +1,8 @@
 
 # ARIA - Automated Research Intelligence Assistant
 
+**🚀 Transform months of research into minutes of insight**
+
 English | [中文](./README_zh.md)
 
 ARIA is an automated research assistant framework for scientific data analysis, visualization, and report generation.
