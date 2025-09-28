@@ -160,7 +160,12 @@ uv sync                # Synchronize dependencies
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is dual-licensed:
+
+- **GNU AGPL-3.0** - for open source use (personal, research, education, open source projects)
+- **Commercial License** - for proprietary/commercial use (contact for licensing)
+
+See the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
