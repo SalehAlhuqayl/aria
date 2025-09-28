@@ -15,14 +15,14 @@ aria/
 ├── data/
 │   ├── raw/                   # Original data
 │   └── processed/              # Preprocessed data
+│   └── output/                 # Experiment outputs
+│       ├── models/             # Trained models
+│       ├── results/            # Experimental results
+│       ├── figures/            # Visualization charts
+│       └── logs/               # Execution logs
 ├── docs/                       # Project documentation
 ├── src/                        # Source code
 ├── scripts/                    # Execution scripts
-└── output/                     # Experiment outputs
-    ├── models/                 # Trained models
-    ├── results/                # Experimental results
-    ├── figures/                # Visualization charts
-    └── logs/                   # Execution logs
 ```
 
 ## Workflow

@@ -32,13 +32,20 @@
    - `mypy src/` for type checking
    - `ruff check src/` for code style
    - `ruff format src/` for code formatting
-5. Create `scripts/run_experiment.py` as the main execution script
+5. Create `scripts/run_experiment.py` as the main execution script(including training, evaluation, visualization,etc.).
 6. Write implementation documentation to `docs/06-implementation-docs.md` including:
    - Module descriptions and dependencies
    - Key algorithms and methods
    - Configuration parameters
+   - Code Structure
 7. Write execution instructions to `docs/07-execution-instructions.md` including:
    - Environment setup
    - Script usage
    - Parameter configurations
    - Expected outputs
+
+## Note
+
+- If extra dependencies are needed, ALWAYS use UV to add the dependencies.
+- Use UV to run python scripts.
+- In the output directory, not only the final results but also all essential intermediate information (such as results from baseline models, training process logs, and visualization figures) must be saved.

@@ -18,6 +18,7 @@
    - Evaluation metrics and criteria
    - Experimental pipeline design
    - Data visualization strategy
+   - To ensure the research results are comprehensive, explore the problem from as many perspectives and methods as possible.
 4. Write the detailed research plan to `docs/05-research-plan.md` with clear sections:
    - Feature Engineering Plan
    - Analysis/Model Architecture

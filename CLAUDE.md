@@ -14,6 +14,11 @@ aria/
 ├── data/
 │   ├── raw/                   # Original data files
 │   └── processed/              # Preprocessed data ready for analysis
+│   └── output/                 # Experiment outputs
+│       ├── models/             # Trained models
+│       ├── results/            # Experimental results
+│       ├── figures/            # Visualization charts
+│       └── logs/               # Execution logs
 ├── docs/                       # All project documentation (numbered sequentially)
 │   ├── 01-basic-information.md        # Project foundation (manually created)
 │   ├── 02-raw-data-analysis.md        # Raw data exploration
@@ -39,11 +44,6 @@ aria/
 ├── scripts/                    # Execution scripts
 │   ├── run_experiment.py
 │   └── launch_app.py          # (if models exist)
-└── output/                     # Experiment outputs
-    ├── models/                 # Trained models
-    ├── results/                # Numerical results
-    ├── figures/                # Visualizations
-    └── logs/                   # Execution logs
 ```
 
 ## Workflow Commands
@@ -81,6 +81,10 @@ Common dependencies for this project:
 - Visualization: matplotlib, seaborn, plotly
 - Web interface: gradio
 - Quality tools: mypy, ruff
+
+## Run Scripts
+
+- ALWAYS use uv to run python scripts.
 
 ## Important Guidelines
 

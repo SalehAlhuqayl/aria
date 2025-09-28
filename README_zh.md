@@ -14,14 +14,14 @@ aria/
 ├── data/
 │   ├── raw/                   # 原始数据
 │   └── processed/              # 预处理后的数据
+│   └── output/                 # 实验输出
+│       ├── models/             # 训练的模型
+│       ├── results/            # 实验结果
+│       ├── figures/            # 可视化图表
+│       └── logs/               # 执行日志
 ├── docs/                       # 项目文档
 ├── src/                        # 源代码
 ├── scripts/                    # 执行脚本
-└── output/                     # 实验输出
-    ├── models/                 # 训练的模型
-    ├── results/                # 实验结果
-    ├── figures/                # 可视化图表
-    └── logs/                   # 执行日志
 ```
 
 ## 工作流程
