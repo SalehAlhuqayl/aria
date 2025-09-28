@@ -1,0 +1,17 @@
+[project]
+name = "aria"
+version = "0.1.0"
+description = "ARIA - Automated Research Intelligence Assistant: A rapid scaffold for scientific data analysis, visualization, and reporting."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "gradio>=5.47.2",
+    "joblib>=1.5.2",
+    "matplotlib>=3.10.6",
+    "numpy>=2.2.6",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.2",
+    "scikit-learn>=1.7.2",
+    "seaborn>=0.13.2",
+    "xgboost>=3.0.5",
+]
