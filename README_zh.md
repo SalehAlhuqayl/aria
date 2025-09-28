@@ -116,7 +116,7 @@ uv sync                # 同步依赖
 
 ## 许可证
 
-[添加许可证信息]
+本项目基于 MIT 许可证开源 - 详见 [LICENSE](LICENSE) 文件。
 
 ## 贡献
 
@@ -124,4 +124,8 @@ uv sync                # 同步依赖
 
 ## 联系方式
 
-[添加联系信息]
+如有问题、建议或合作机会，请通过以下方式联系：
+
+- **GitHub Issues**: [创建 issue](https://github.com/Biaoo/aria/issues)
+- **邮箱**: `biao00luo@gmail.com`
+- **项目主页**: [ARIA on GitHub](https://github.com/Biaoo/aria)

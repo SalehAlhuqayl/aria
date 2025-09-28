@@ -117,7 +117,7 @@ uv sync                # Synchronize dependencies
 
 ## License
 
-[Add license information]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 
@@ -125,4 +125,8 @@ Contributions are welcome! Please feel free to submit Issues and Pull Requests.
 
 ## Contact
 
-[Add contact information]
+For questions, suggestions, or collaboration opportunities:
+
+- **GitHub Issues**: [Create an issue](https://github.com/Biaoo/aria/issues)
+- **Email**: `biao00luo@gmail.com`
+- **Project**: [ARIA on GitHub](https://github.com/Biaoo/aria)

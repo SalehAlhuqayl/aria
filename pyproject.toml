@@ -4,6 +4,9 @@ version = "0.1.0"
 description = "ARIA - Automated Research Intelligence Assistant: A rapid scaffold for scientific data analysis, visualization, and reporting."
 readme = "README.md"
 requires-python = ">=3.10"
+authors = [
+    { name = "Biao Luo", email = "biao00luo@gmail.com" }
+]
 dependencies = [
     "gradio>=5.47.2",
     "joblib>=1.5.2",
