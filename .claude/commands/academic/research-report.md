@@ -22,7 +22,7 @@
    - Data analysis (`docs/02-raw-data-analysis.md`, `docs/04-processed-data-analysis.md`)
    - Research plan (`docs/05-research-plan.md`)
    - Experiment report (`docs/09-experiment-report.md`)
-   - All numerical results and figures in `output/`
+   - All numerical results and figures in `data/output/`
 
 2. Generate manuscript in `docs/10-manuscript.md` following Nature/Science format:
    - **Title**: Concise, impactful statement of main finding
