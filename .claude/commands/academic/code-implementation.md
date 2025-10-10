@@ -49,3 +49,4 @@
 - If extra dependencies are needed, ALWAYS use UV to add the dependencies.
 - Use UV to run python scripts.
 - In the output directory, not only the final results but also all essential intermediate information (such as results from baseline models, training process logs, and visualization figures) must be saved.
+- Prefer PyTorch as the deep learning framework; do not use TensorFlow.
