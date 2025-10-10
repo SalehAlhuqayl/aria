@@ -2,6 +2,7 @@
     "python.defaultInterpreterPath": ".venv/bin/python",
     "markdownlint.config": {
         "MD022": false,
+        "MD029": false,
         "MD032": false,
         "MD036": false,
         "MD040": false,
