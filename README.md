@@ -135,5 +135,5 @@ Contributions are welcome! Please feel free to submit Issues and Pull Requests.
 For questions, suggestions, or collaboration opportunities:
 
 - **GitHub Issues**: [Create an issue](https://github.com/Biaoo/aria/issues)
-- **Email**: `biao00luo@gmail.com`
+- **Email**: [biao00luo@gmail.com](mailto:biao00luo@gmail.com)
 - **Project**: [ARIA on GitHub](https://github.com/Biaoo/aria)

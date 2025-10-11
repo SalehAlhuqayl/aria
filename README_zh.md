@@ -134,5 +134,5 @@ uv sync                # 同步依赖
 如有问题、建议或合作机会，请通过以下方式联系：
 
 - **GitHub Issues**: [创建 issue](https://github.com/Biaoo/aria/issues)
-- **邮箱**: `biao00luo@gmail.com`
+- **邮箱**: [biao00luo@gmail.com](mailto:biao00luo@gmail.com)
 - **项目主页**: [ARIA on GitHub](https://github.com/Biaoo/aria)
