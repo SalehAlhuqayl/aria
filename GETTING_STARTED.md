@@ -6,7 +6,7 @@ This guide will walk you through the complete process of using ARIA (Automated R
 
 - Python 3.10 or higher
 - Git
-- Claude AI (via Claude Code or API access)
+- [Claude Code](https://claude.com/product/claude-code) or [Cursor](https://www.cursor.com/)
 - UV package manager (recommended) or pip
 
 ## Step 1: Fork and Clone the Repository
