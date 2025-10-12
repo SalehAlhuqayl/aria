@@ -85,6 +85,17 @@ Git 命令文件位于 `.claude/commands/git/` 目录：
   - 当文件修改较多时，自动分批提交（每批不超过10个文件）
   - 根据代码变更自动生成有意义的提交描述
 
+## 示例项目
+
+展示 ARIA 完整工作流的示例项目：
+
+- 🏠 [**aria-example-buston**](https://github.com/Biaoo/aria-example-buston) - 波士顿房价预测（回归）| [OpenML数据集](https://www.openml.org/d/531)
+- 💎 [**aria-example-diamonds**](https://github.com/Biaoo/aria-example-diamonds) - 钻石价格预测（回归）| [OpenML数据集](https://www.openml.org/d/42225)
+- 🐛 [**aria-example-kc1**](https://github.com/Biaoo/aria-example-kc1) - 软件缺陷预测（分类）| [OpenML数据集](https://www.openml.org/d/1067)
+- 🧩 [**aria-example-sat11**](https://github.com/Biaoo/aria-example-sat11) - SAT求解器性能预测（回归）| [OpenML数据集](https://www.openml.org/d/41980)
+
+所有数据集均来自 [OpenML](https://www.openml.org/)，一个开放的机器学习平台。每个项目都包含完整的文档、生产级代码、训练好的模型和学术论文。
+
 ## 快速开始
 
 1. **准备数据**：将原始数据放入 `data/raw/`

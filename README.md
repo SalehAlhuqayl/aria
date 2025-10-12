@@ -86,6 +86,17 @@ Git command files are located in `.claude/commands/git/` directory:
   - When there are many modified files, automatically commits in batches (max 10 files per commit)
   - Generates meaningful commit descriptions based on code changes
 
+## Example Projects
+
+Complete example projects demonstrating ARIA workflow across different research tasks:
+
+- 🏠 [**aria-example-buston**](https://github.com/Biaoo/aria-example-buston) - Boston housing price prediction (regression) | [OpenML Dataset](https://www.openml.org/d/531)
+- 💎 [**aria-example-diamonds**](https://github.com/Biaoo/aria-example-diamonds) - Diamond price prediction (regression) | [OpenML Dataset](https://www.openml.org/d/42225)
+- 🐛 [**aria-example-kc1**](https://github.com/Biaoo/aria-example-kc1) - Software defect prediction (classification) | [OpenML Dataset](https://www.openml.org/d/1067)
+- 🧩 [**aria-example-sat11**](https://github.com/Biaoo/aria-example-sat11) - SAT solver performance prediction (regression) | [OpenML Dataset](https://www.openml.org/d/41980)
+
+All datasets are from [OpenML](https://www.openml.org/), an open machine learning platform. Each project includes complete documentation, production-ready code, trained models, and academic manuscripts.
+
 ## Quick Start
 
 1. **Prepare Data**: Place raw data in `data/raw/`
