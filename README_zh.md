@@ -147,3 +147,10 @@ uv sync                # 同步依赖
 - **GitHub Issues**: [创建 issue](https://github.com/Biaoo/aria/issues)
 - **邮箱**: [biao00luo@gmail.com](mailto:biao00luo@gmail.com)
 - **项目主页**: [ARIA on GitHub](https://github.com/Biaoo/aria)
+
+### 加入社区
+
+<div align="center">
+  <img src="assets/wechat-qr.png" alt="微信群二维码" width="200"/>
+  <p>扫码加入微信交流群</p>
+</div>

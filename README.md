@@ -148,3 +148,10 @@ For questions, suggestions, or collaboration opportunities:
 - **GitHub Issues**: [Create an issue](https://github.com/Biaoo/aria/issues)
 - **Email**: [biao00luo@gmail.com](mailto:biao00luo@gmail.com)
 - **Project**: [ARIA on GitHub](https://github.com/Biaoo/aria)
+
+### Join Our Community
+
+<div align="center">
+  <img src="assets/wechat-qr.png" alt="WeChat Group QR Code" width="200"/>
+  <p>Scan to join WeChat discussion group</p>
+</div>
