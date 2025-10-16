@@ -1,4 +1,3 @@
-
 # ARIA - Automated Research Intelligence Assistant
 
 **🚀 Transform months of research into minutes of insight**
@@ -13,10 +12,11 @@ ARIA is an automated research assistant framework for scientific data analysis, 
 aria/
 ├── .claude/commands/           # Claude AI command files
 │   ├── academic/               # Academic workflow commands
-│   └── git/                    # Git operation commands
+│   ├── git/                    # Git operation commands
+│   └── python/                 # Python environment commands
 ├── data/
 │   ├── raw/                   # Original data
-│   └── processed/              # Preprocessed data
+│   ├── processed/              # Preprocessed data
 │   └── output/                 # Experiment outputs
 │       ├── models/             # Trained models
 │       ├── results/            # Experimental results
@@ -25,40 +25,51 @@ aria/
 ├── docs/                       # Project documentation
 ├── src/                        # Source code
 ├── scripts/                    # Execution scripts
+├── GETTING_STARTED.md          # Quick start guide
+├── INSTALL.md                  # Installation guide
+└── README.md                   # This file
 ```
 
 ## Workflow
 
 ### 1. Data Preparation
+
 - Place raw data in the `data/raw/` folder
 - Manually create `docs/01-basic-information.md` to describe project background, objectives, and data overview
 
 ### 2. Data Analysis
+
 - **Raw Data Analysis**: Use `@raw-data-analysis.md` command to analyze raw data, generating `docs/02-raw-data-analysis.md`
 - **Data Preprocessing**: Use `@preprocess.md` command to design preprocessing plan (`docs/03-preprocess-plan.md`), execute preprocessing, analyze processed data (`docs/04-processed-data-analysis.md`)
 
 ### 3. Research Design
+
 - **Research Plan**: Use `@research-plan.md` command to develop research plan including feature engineering, model selection, evaluation metrics, generating `docs/05-research-plan.md`
 
 ### 4. Code Implementation
+
 - **Code Development**: Use `@code-implementation.md` command to implement research plan, creating necessary Python modules
 - Generate `docs/06-implementation-docs.md` (implementation documentation) and `docs/07-execution-instructions.md` (execution guide)
 - Code quality check: Use mypy and ruff to ensure code quality
 
 ### 5. Experiment Execution
+
 - **Run Experiments**: Use `@run-experiments.md` command to execute experiment scripts
 - Outputs saved to corresponding subfolders in `output/` directory
 
 ### 6. Results Analysis
+
 - **Results Analysis**: Use `@experiment-analysis.md` command to analyze experiment outputs
 - Generate individual analyses in `docs/08-experiment-results/` directory
 - Generate `docs/09-experiment-report.md` comprehensive experiment report
 
 ### 7. Paper Writing
+
 - **Academic Paper**: Use `@research-report.md` command to generate high-impact journal format paper
 - Generate `docs/10-manuscript.md` (main text), `docs/10-manuscript-supplement.md` (supplementary materials), `docs/10-cover-letter.md` (cover letter)
 
 ### 8. Model Deployment (Optional)
+
 - **Gradio Interface**: If models are trained, use `@gradio-app.md` command to create model inference interface
 - Generate `docs/11-model-deployment-guide.md` deployment guide
 
@@ -76,6 +87,16 @@ All academic command files are located in `.claude/commands/academic/` directory
 - `@experiment-analysis.md` - Results analysis
 - `@research-report.md` - Academic paper generation
 - `@gradio-app.md` - Model deployment interface
+
+### Python Environment Commands
+
+Python command files are located in `.claude/commands/python/` directory:
+
+- `@setup-environment.md` - Automated environment setup
+  - Checks and installs Git, Python 3.12+, and UV package manager
+  - Sets up project dependencies with `uv sync`
+  - Includes Tsinghua mirror fallback for network issues
+  - Provides complete environment verification
 
 ### Git Commands
 
@@ -99,10 +120,24 @@ All datasets are from [OpenML](https://www.openml.org/), an open machine learnin
 
 ## Quick Start
 
-1. **Prepare Data**: Place raw data in `data/raw/`
-2. **Create Project Description**: Write `docs/01-basic-information.md`
-3. **Execute Workflow**: Use Claude AI to execute commands in sequence
-4. **Version Control**: Use `@git-commit.md` for intelligent commits
+**New to ARIA? Start here: [Getting Started Guide](./GETTING_STARTED.md)** 📖
+
+The complete guide covers:
+
+- Installing Git and AI code editor (Cursor/VSCode/Lingma IDE)
+- Automated environment setup with `@setup-environment.md`
+- Step-by-step workflow from data to paper
+- Troubleshooting and best practices
+
+### For Experienced Users
+
+1. **Setup Environment**: Use `@setup-environment.md` to configure Python and dependencies
+2. **Prepare Data**: Place raw data in `data/raw/`
+3. **Create Project Description**: Write `docs/01-basic-information.md`
+4. **Execute Workflow**: Use Claude AI to execute academic commands in sequence
+5. **Version Control**: Use `@git-commit.md` for intelligent commits
+
+📚 **Full Documentation**: See [GETTING_STARTED.md](./GETTING_STARTED.md) and [INSTALL.md](./INSTALL.md)
 
 ## Dependency Management
 
