@@ -2,20 +2,105 @@
 
 This guide will walk you through the complete process of using ARIA (Automated Research Intelligence Assistant) from setup to generating your first research report.
 
-## Prerequisites
+## Quick Start - Three Simple Steps
 
-Before starting, you'll need to install the following tools:
+### Step 1: Install Git and Clone the Repository
 
-- **Python 3.12 or higher** - [Download Python](https://www.python.org/downloads/)
-- **Git** - Version control system [Download Git](https://git-scm.com/downloads)
-- **AI Code Editor** - Choose one:
-  - [Cursor](https://www.cursor.com/) (Recommended, AI built-in)
-  - [Claude Code](https://claude.com/product/claude-code) (AI-powered development tool)
-  - [Visual Studio Code](https://code.visualstudio.com/) + AI Extensions
-  - [Lingma IDE](https://lingma.aliyun.com/download) (For China users, when Claude Code/Cursor models are not accessible)
-- **UV Package Manager** - Fast Python package installer [UV Documentation](https://docs.astral.sh/uv/)
-  - Recommended over pip for better performance
-  - Installation instructions provided below
+First, install Git if you haven't already:
+
+**Windows:**
+
+- Download from [git-scm.com](https://git-scm.com/download/win) and install
+
+**macOS:**
+
+```bash
+brew install git
+```
+
+**Linux:**
+
+```bash
+sudo apt-get update && sudo apt-get install git
+```
+
+Then clone the ARIA repository (choose one of the following options):
+
+#### Option A: Fork on GitHub (Recommended)
+
+1. Visit [ARIA on GitHub](https://github.com/Biaoo/aria)
+2. Click the "Fork" button in the top-right corner
+3. Clone your forked repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/aria.git
+cd aria
+```
+
+#### Option B: Fork on Gitee (For China Users)
+
+1. Visit [ARIA on Gitee](https://gitee.com/BiaooGitee/aria)
+2. Click the "Fork" button in the top-right corner
+3. Clone your forked repository:
+
+```bash
+git clone https://gitee.com/YOUR_USERNAME/aria.git
+cd aria
+```
+
+#### Option C: Direct Clone
+
+If you prefer not to fork, you can directly clone from GitHub or Gitee:
+
+**From GitHub:**
+
+```bash
+git clone https://github.com/Biaoo/aria.git
+cd aria
+```
+
+**From Gitee:**
+
+```bash
+git clone https://gitee.com/BiaooGitee/aria.git
+cd aria
+```
+
+### Step 2: Install an AI Code Editor
+
+Choose **ONE** of the following AI-powered code editors:
+
+- **[Cursor](https://www.cursor.com/)** (Recommended, AI built-in)
+- **[Claude Code](https://claude.com/product/claude-code)** (AI-powered development tool)
+- **[Visual Studio Code](https://code.visualstudio.com/)** + AI Extensions (e.g., GitHub Copilot)
+- **[Lingma IDE](https://lingma.aliyun.com/download)** (For China users, AI built-in)
+
+After installation, **open the `aria` project folder** in your AI code editor.
+
+### Step 3: Run Environment Setup Command
+
+Now in your AI code editor, use the environment setup command to automatically configure your system:
+
+**In your AI code editor chat:**
+
+- **Cursor/VSCode + AI Extensions:** Type `/` and select `setup-environment.md`
+- **Lingma IDE:** Type `@setup-environment.md`
+
+This command will automatically:
+✅ Check and install Python 3.12+  
+✅ Check and install UV package manager  
+✅ Set up project dependencies  
+✅ Verify your complete environment
+
+That's it! The AI assistant will guide you through any necessary installations and handle the configuration for you. You don't need to worry about the technical details.
+
+> **Note:** If automatic setup fails, refer to the [Manual Installation Guide](#manual-installation-guide-optional) below.
+
+---
+
+## Manual Installation Guide (Optional)
+
+If the automated setup doesn't work or you prefer manual installation, follow these detailed instructions:
 
 ### Tool Installation Guide
 
@@ -50,12 +135,6 @@ git --version
 
 #### 2. Install Python
 
-Choose one of the following methods:
-
----
-
-**Option A: Direct Installation**
-
 **Windows:**
 
 - Download from [python.org](https://www.python.org/downloads/)
@@ -82,68 +161,6 @@ Verify installation:
 ```bash
 python3 --version  # Should show 3.12 or higher
 ```
-
----
-
-**Option B: Using pyenv (Recommended for managing multiple Python versions)**
-
-pyenv allows you to easily install and switch between multiple Python versions.
-
-**macOS/Linux Installation:**
-
-```bash
-# Install pyenv
-curl https://pyenv.run | bash
-
-# Add to shell configuration (~/.bashrc, ~/.zshrc, or ~/.bash_profile)
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-
-# Reload shell configuration
-source ~/.zshrc  # or source ~/.bashrc
-```
-
-**Windows Installation:**
-
-Use [pyenv-win](https://github.com/pyenv-win/pyenv-win):
-
-```powershell
-# Install using PowerShell
-Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
-```
-
-**Install Python 3.12 with pyenv:**
-
-```bash
-# List available Python versions
-pyenv install --list | grep 3.12
-
-# Install Python 3.12 (choose latest 3.12.x version)
-pyenv install 3.12.7
-
-# Set as global default
-pyenv global 3.12.7
-
-# Or set for this project only
-pyenv local 3.12.7
-```
-
-**Verify installation:**
-
-```bash
-python --version  # Should show 3.12.x
-pyenv versions    # Shows all installed Python versions
-```
-
-**Benefits of pyenv:**
-
-- Easy switching between Python versions
-- Project-specific Python versions
-- No need for sudo/admin rights
-- Clean uninstallation
-
-Learn more: [pyenv GitHub](https://github.com/pyenv/pyenv)
 
 #### 3. Install UV Package Manager
 
@@ -277,33 +294,15 @@ Learn more: [Lingma IDE Official Site](https://lingma.aliyun.com/download)
 | China Access   | May require VPN     | Depends on extension               | Optimized for China |
 | Customization  | Standard options    | Extensive plugin ecosystem         | Standard options    |
 
-## Step 1: Fork and Clone the Repository
+---
 
-### Option A: Fork on GitHub (Recommended)
+## Start Your Research Workflow
 
-1. Visit [ARIA on GitHub](https://github.com/Biaoo/aria)
-2. Click the "Fork" button in the top-right corner
-3. Clone your forked repository:
+After environment setup is complete, you're ready to begin your research!
 
-```bash
-git clone https://github.com/YOUR_USERNAME/aria.git
-cd aria
-```
+### Step 3: Fork and Clone the Repository (If Not Done)
 
-### Option B: Fork on Gitee (For China Users)
-
-1. Visit [ARIA on Gitee](https://gitee.com/BiaooGitee/aria)
-2. Click the "Fork" button in the top-right corner
-3. Clone your forked repository:
-
-```bash
-git clone https://gitee.com/YOUR_USERNAME/aria.git
-cd aria
-```
-
-### Option C: Direct Clone
-
-If you prefer not to fork, you can directly clone from GitHub or Gitee:
+If you haven't already cloned the repository during setup:
 
 **From GitHub:**
 
@@ -312,63 +311,14 @@ git clone https://github.com/Biaoo/aria.git
 cd aria
 ```
 
-**From Gitee:**
+**From Gitee (China users):**
 
 ```bash
 git clone https://gitee.com/BiaooGitee/aria.git
 cd aria
 ```
 
-## Step 2: Set Up Python Environment
-
-Now that you have all the tools installed, let's set up the Python environment for ARIA:
-
-### Create Virtual Environment
-
-```bash
-# Navigate to your ARIA project directory
-cd aria
-
-# Create a virtual environment with Python 3.12
-uv venv --python 3.12
-```
-
-### Activate Virtual Environment
-
-**Windows:**
-
-```bash
-.venv\Scripts\activate
-```
-
-**macOS/Linux:**
-
-```bash
-source .venv/bin/activate
-```
-
-### Install Dependencies
-
-```bash
-uv sync
-```
-
-**For users in China** (optional, for faster downloads):
-
-```bash
-UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple uv sync
-```
-
-### Verify Installation
-
-```bash
-# Check if packages are installed correctly
-python -c "import pandas; import numpy; import sklearn; print('✓ All packages installed successfully!')"
-```
-
-> **Note:** For more advanced configuration options, see [INSTALL.md](./INSTALL.md).
-
-## Step 3: Project Structure Setup
+### Step 4: Project Structure Setup
 
 Create the necessary directories if they don't exist:
 
@@ -378,7 +328,7 @@ mkdir -p docs
 mkdir -p data/output/{models,results,figures,logs}
 ```
 
-## Step 4: Prepare Your Data
+### Step 5: Prepare Your Data
 
 1. Place your raw data files in the `data/raw/` directory:
 
@@ -450,7 +400,7 @@ Example structure:
 - Missing Data: [Initial assessment of completeness]
 ```
 
-## Step 5: Use AI Workflow Commands
+### Step 6: Use AI Workflow Commands
 
 ARIA uses AI workflow commands to automate the research process. Commands are located in `.claude/commands/academic/`.
 
@@ -512,7 +462,7 @@ Follow these steps in sequence:
 
    Creates interactive web interface for your model
 
-## Step 6: Code Quality Checks
+### Step 7: Code Quality Checks
 
 After implementing code, ensure quality by running:
 
@@ -527,7 +477,7 @@ ruff check src/
 ruff format src/
 ```
 
-## Step 7: Version Control
+### Step 8: Version Control
 
 Use the intelligent Git commit command:
 
@@ -615,30 +565,13 @@ Here's a complete example using the classic Iris dataset:
    - Windows: Reinstall Python and check "Add Python to PATH"
    - macOS/Linux: Try `python3` instead of `python`
    - Verify with: `python --version` or `python3 --version`
-   - If using pyenv: Run `pyenv versions` to check installed versions
 
-3. **pyenv issues**:
-   - **Command not found**: Restart terminal or add pyenv to PATH in shell config
-   - **Build failed**: Install required dependencies:
-
-     ```bash
-     # macOS
-     brew install openssl readline sqlite3 xz zlib
-
-     # Ubuntu/Debian
-     sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
-     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
-     libncurses5-dev libncursesw5-dev xz-utils tk-dev
-     ```
-
-   - **Wrong Python version active**: Use `pyenv global 3.12.7` or `pyenv local 3.12.7`
-
-4. **UV not found**:
+3. **UV not found**:
    - Close and reopen your terminal after installation
    - Check if UV is in PATH: `echo $PATH` (macOS/Linux) or `echo %PATH%` (Windows)
    - Try reinstalling: [UV Installation Guide](https://docs.astral.sh/uv/getting-started/installation/)
 
-5. **Permission denied errors**:
+4. **Permission denied errors**:
    - macOS/Linux: You may need to use `sudo` for system-wide installations
    - Windows: Run PowerShell or Command Prompt as Administrator
 

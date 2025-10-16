@@ -2,20 +2,105 @@
 
 本指南将带你完成从环境搭建到生成首份研究报告的完整 ARIA（Automated Research Intelligence Assistant）使用流程。
 
-## 前置条件
+## 快速开始 - 三步搞定
 
-开始之前，你需要安装以下工具：
+### 第一步：安装 Git 并克隆仓库
 
-- **Python 3.12 或更高版本** - [下载 Python](https://www.python.org/downloads/)
-- **Git** - 版本控制系统 [下载 Git](https://git-scm.com/downloads)
-- **AI 代码编辑器** - 选择其一：
-  - [Cursor](https://www.cursor.com/)（推荐，内置 AI）
-  - [Claude Code](https://claude.com/product/claude-code)（AI 开发工具）
-  - [Visual Studio Code](https://code.visualstudio.com/) + AI 插件
-  - [通义灵码 Lingma IDE](https://lingma.aliyun.com/download)（国内用户推荐，当 Claude Code/Cursor 部分模型无法访问时的替代方案）
-- **UV 包管理器** - 快速的 Python 包安装工具 [UV 文档](https://docs.astral.sh/uv/)
-  - 推荐使用，性能优于 pip
-  - 安装说明见下文
+首先，如果还没有安装 Git，请先安装：
+
+**Windows：**
+
+- 从 [git-scm.com](https://git-scm.com/download/win) 下载并安装
+
+**macOS：**
+
+```bash
+brew install git
+```
+
+**Linux：**
+
+```bash
+sudo apt-get update && sudo apt-get install git
+```
+
+然后克隆 ARIA 仓库（选择以下其中一个方案）：
+
+#### 方案 A：在 GitHub 上 Fork（推荐）
+
+1. 访问 [ARIA on GitHub](https://github.com/Biaoo/aria)
+2. 点击右上角的 "Fork" 按钮
+3. 克隆你 Fork 后的仓库：
+
+```bash
+git clone https://github.com/YOUR_USERNAME/aria.git
+cd aria
+```
+
+#### 方案 B：在 Gitee 上 Fork（国内用户推荐）
+
+1. 访问 [ARIA on Gitee](https://gitee.com/BiaooGitee/aria)
+2. 点击右上角的 "Fork" 按钮
+3. 克隆你 Fork 后的仓库：
+
+```bash
+git clone https://gitee.com/YOUR_USERNAME/aria.git
+cd aria
+```
+
+#### 方案 C：直接克隆
+
+如果不需要 Fork，可以直接从 GitHub 或 Gitee 克隆：
+
+**从 GitHub 克隆：**
+
+```bash
+git clone https://github.com/Biaoo/aria.git
+cd aria
+```
+
+**从 Gitee 克隆：**
+
+```bash
+git clone https://gitee.com/BiaooGitee/aria.git
+cd aria
+```
+
+### 第二步：安装 AI 代码编辑器
+
+选择以下**其中一个** AI 驱动的代码编辑器：
+
+- **[Cursor](https://www.cursor.com/)**（推荐，内置 AI）
+- **[Claude Code](https://claude.com/product/claude-code)**（AI 开发工具）
+- **[Visual Studio Code](https://code.visualstudio.com/)** + AI 插件（如 GitHub Copilot）
+- **[通义灵码 Lingma IDE](https://lingma.aliyun.com/download)**（国内用户推荐，内置 AI）
+
+安装完成后，在 AI 代码编辑器中**打开 `aria` 项目文件夹**。
+
+### 第三步：运行环境配置命令
+
+现在在 AI 代码编辑器中使用环境配置命令自动完成系统配置：
+
+**在 AI 代码编辑器的对话框中：**
+
+- **Cursor/VSCode + AI 插件：** 输入 `/` 并选择 `setup-environment.md`
+- **通义灵码 Lingma IDE：** 输入 `@setup-environment.md`
+
+该命令将自动：
+✅ 检查并安装 Python 3.12+  
+✅ 检查并安装 UV 包管理器  
+✅ 配置项目依赖  
+✅ 验证完整环境
+
+就这样！AI 助手会引导你完成所有必要的安装并处理配置工作，你无需关注技术细节。
+
+> **提示：** 如果自动配置失败，请参考下方的[手动安装指南（可选）](#手动安装指南可选)。
+
+---
+
+## 手动安装指南（可选）
+
+如果自动配置不起作用或你更喜欢手动安装，请按以下详细说明操作：
 
 ### 工具安装指南
 
@@ -50,12 +135,6 @@ git --version
 
 #### 2. 安装 Python
 
-选择以下方法之一：
-
----
-
-**方案 A：直接安装**
-
 **Windows：**
 
 - 从 [python.org](https://www.python.org/downloads/) 下载安装包
@@ -82,68 +161,6 @@ sudo apt-get install python3.12 python3.12-venv
 ```bash
 python3 --version  # 应显示 3.12 或更高版本
 ```
-
----
-
-**方案 B：使用 pyenv（推荐用于管理多个 Python 版本）**
-
-pyenv 可以让你轻松安装和切换多个 Python 版本。
-
-**macOS/Linux 安装：**
-
-```bash
-# 安装 pyenv
-curl https://pyenv.run | bash
-
-# 添加到 shell 配置文件（~/.bashrc、~/.zshrc 或 ~/.bash_profile）
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-
-# 重新加载 shell 配置
-source ~/.zshrc  # 或 source ~/.bashrc
-```
-
-**Windows 安装：**
-
-使用 [pyenv-win](https://github.com/pyenv-win/pyenv-win)：
-
-```powershell
-# 使用 PowerShell 安装
-Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
-```
-
-**使用 pyenv 安装 Python 3.12：**
-
-```bash
-# 列出可用的 Python 版本
-pyenv install --list | grep 3.12
-
-# 安装 Python 3.12（选择最新的 3.12.x 版本）
-pyenv install 3.12.7
-
-# 设置为全局默认版本
-pyenv global 3.12.7
-
-# 或仅为当前项目设置
-pyenv local 3.12.7
-```
-
-**验证安装：**
-
-```bash
-python --version  # 应显示 3.12.x
-pyenv versions    # 显示所有已安装的 Python 版本
-```
-
-**pyenv 的优势：**
-
-- 轻松切换 Python 版本
-- 项目级别的 Python 版本管理
-- 无需 sudo/管理员权限
-- 干净的卸载方式
-
-了解更多：[pyenv GitHub](https://github.com/pyenv/pyenv)
 
 #### 3. 安装 UV 包管理器
 
@@ -277,33 +294,15 @@ Lingma IDE 支持类似 Cursor 的工作流命令：
 | 国内访问 | 可能需要VPN  | 取决于插件                         | 专为国内优化        |
 | 可定制性 | 标准选项     | 广泛的插件生态系统                 | 标准选项            |
 
-## 步骤 1：Fork 并克隆仓库
+---
 
-### 方案 A：在 GitHub 上 Fork（推荐）
+## 开始你的研究工作流
 
-1. 访问 [ARIA on GitHub](https://github.com/Biaoo/aria)
-2. 点击右上角的 "Fork" 按钮
-3. 克隆你 Fork 后的仓库：
+环境配置完成后，你就可以开始研究了！
 
-```bash
-git clone https://github.com/YOUR_USERNAME/aria.git
-cd aria
-```
+### 步骤 3：Fork 并克隆仓库（如未完成）
 
-### 方案 B：在 Gitee 上 Fork（国内用户推荐）
-
-1. 访问 [ARIA on Gitee](https://gitee.com/BiaooGitee/aria)
-2. 点击右上角的 "Fork" 按钮
-3. 克隆你 Fork 后的仓库：
-
-```bash
-git clone https://gitee.com/YOUR_USERNAME/aria.git
-cd aria
-```
-
-### 方案 C：直接克隆
-
-如果不需要 Fork，可以直接从 GitHub 或 Gitee 克隆：
+如果在配置过程中尚未克隆仓库：
 
 **从 GitHub 克隆：**
 
@@ -312,63 +311,14 @@ git clone https://github.com/Biaoo/aria.git
 cd aria
 ```
 
-**从 Gitee 克隆：**
+**从 Gitee 克隆（国内用户）：**
 
 ```bash
 git clone https://gitee.com/BiaooGitee/aria.git
 cd aria
 ```
 
-## 步骤 2：配置 Python 环境
-
-安装完所有工具后，让我们为 ARIA 配置 Python 环境：
-
-### 创建虚拟环境
-
-```bash
-# 进入 ARIA 项目目录
-cd aria
-
-# 使用 Python 3.12 创建虚拟环境
-uv venv --python 3.12
-```
-
-### 激活虚拟环境
-
-**Windows：**
-
-```bash
-.venv\Scripts\activate
-```
-
-**macOS/Linux：**
-
-```bash
-source .venv/bin/activate
-```
-
-### 安装依赖包
-
-```bash
-uv sync
-```
-
-**国内用户**（可选，加速下载）：
-
-```bash
-UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple uv sync
-```
-
-### 验证安装
-
-```bash
-# 检查包是否正确安装
-python -c "import pandas; import numpy; import sklearn; print('✓ 所有包已成功安装！')"
-```
-
-> **提示：** 更多高级配置选项请参阅 [INSTALL.md](./INSTALL.md)。
-
-## 步骤 3：初始化项目结构
+### 步骤 4：初始化项目结构
 
 如目录不存在，可运行以下命令创建：
 
@@ -378,7 +328,7 @@ mkdir -p docs
 mkdir -p data/output/{models,results,figures,logs}
 ```
 
-## 步骤 4：准备数据
+### 步骤 5：准备数据
 
 1. 将原始数据文件放入 `data/raw/` 目录：
 
@@ -450,7 +400,7 @@ mkdir -p data/output/{models,results,figures,logs}
 - 缺失情况：[初步的完整性评估]
 ```
 
-## 步骤 5：使用 AI 工作流命令
+### 步骤 6：使用 AI 工作流命令
 
 ARIA 通过 AI 工作流命令自动化研究过程，命令位于 `.claude/commands/academic/`。
 
@@ -512,7 +462,7 @@ ARIA 通过 AI 工作流命令自动化研究过程，命令位于 `.claude/comm
 
    构建模型的交互式 Web 界面
 
-## 步骤 6：代码质量检查
+### 步骤 7：代码质量检查
 
 实现代码后，请运行以下命令确保质量：
 
@@ -527,7 +477,7 @@ ruff check src/
 ruff format src/
 ```
 
-## 步骤 7：版本控制
+### 步骤 8：版本控制
 
 使用智能 Git 提交命令：
 
@@ -615,30 +565,13 @@ ruff format src/
    - Windows：重新安装 Python 并勾选 "Add Python to PATH"
    - macOS/Linux：尝试使用 `python3` 而非 `python`
    - 验证：`python --version` 或 `python3 --version`
-   - 如果使用 pyenv：运行 `pyenv versions` 检查已安装版本
 
-3. **pyenv 相关问题**：
-   - **找不到命令**：重启终端或在 shell 配置中添加 pyenv 到 PATH
-   - **构建失败**：安装必要依赖：
-
-     ```bash
-     # macOS
-     brew install openssl readline sqlite3 xz zlib
-
-     # Ubuntu/Debian
-     sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
-     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
-     libncurses5-dev libncursesw5-dev xz-utils tk-dev
-     ```
-
-   - **Python 版本不正确**：使用 `pyenv global 3.12.7` 或 `pyenv local 3.12.7`
-
-4. **找不到 UV**：
+3. **找不到 UV**：
    - 安装后关闭并重新打开终端
    - 检查 UV 是否在 PATH 中：`echo $PATH` (macOS/Linux) 或 `echo %PATH%` (Windows)
    - 尝试重新安装：[UV 安装指南](https://docs.astral.sh/uv/getting-started/installation/)
 
-5. **权限被拒绝错误**：
+4. **权限被拒绝错误**：
    - macOS/Linux：系统级安装可能需要使用 `sudo`
    - Windows：以管理员身份运行 PowerShell 或命令提示符
 
