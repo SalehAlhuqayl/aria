@@ -21,3 +21,6 @@ wheels/
 
 # ENV files
 .env
+
+# uv lock file
+uv.lock
