@@ -9,8 +9,10 @@
 - **Python 3.12 或更高版本** - [下载 Python](https://www.python.org/downloads/)
 - **Git** - 版本控制系统 [下载 Git](https://git-scm.com/downloads)
 - **AI 代码编辑器** - 选择其一：
-  - [Cursor](https://www.cursor.com/)（内置 AI）
+  - [Cursor](https://www.cursor.com/)（推荐，内置 AI）
+  - [Claude Code](https://claude.com/product/claude-code)（AI 开发工具）
   - [Visual Studio Code](https://code.visualstudio.com/) + AI 插件
+  - [通义灵码 Lingma IDE](https://lingma.aliyun.com/download)（国内用户推荐，当 Claude Code/Cursor 部分模型无法访问时的替代方案）
 - **UV 包管理器** - 快速的 Python 包安装工具 [UV 文档](https://docs.astral.sh/uv/)
   - 推荐使用，性能优于 pip
   - 安装说明见下文
@@ -160,14 +162,52 @@ Cursor 是一款内置 AI 功能的代码编辑器。
 
 ---
 
+**方案 C：通义灵码 Lingma IDE**（国内用户推荐）
+
+通义灵码 Lingma IDE 是阿里云通义团队开发的 AI 驱动开发工具，专为中国用户设计，当国际 AI 模型（Claude Code/Cursor）无法访问时的理想选择。
+
+**特点：**
+
+- 全面集成 AI 编码助手（内置功能，无需插件）
+- 工程级代码理解和生成
+- 行间对话和代码建议
+- 终端命令执行
+- 记忆感知和上下文理解
+- 编程智能体能力
+- 国内访问流畅，无需VPN
+
+**安装步骤：**
+
+1. 访问 [通义灵码 IDE 下载页面](https://lingma.aliyun.com/download)
+2. 下载适合你系统的版本：
+   - **macOS**：macOS 10.15+（支持 Intel 和 Apple Silicon）
+   - **Windows**：Windows 10/11（x86、arm64）
+3. 安装应用程序
+4. 打开 Lingma IDE，使用阿里云账号登录
+5. 即可开始使用 AI 编码功能
+
+**在 Lingma IDE 中使用 ARIA 命令：**
+
+Lingma IDE 支持类似 Cursor 的工作流命令：
+
+1. 在 Lingma IDE 中打开 ARIA 项目文件夹
+2. 使用对话功能引用 ARIA 命令文件
+3. 输入 `@` 后跟命令文件名（例如：`@raw-data-analysis.md`）
+4. 按照 AI 引导的工作流程进行操作
+
+了解更多：[通义灵码官方网站](https://lingma.aliyun.com/download)
+
+---
+
 **对比：**
 
-| 功能     | Cursor       | VSCode + 插件                      |
-| -------- | ------------ | ---------------------------------- |
-| 内置 AI  | 是           | 否（需要安装插件）                 |
-| 斜杠命令 | 原生支持     | 是（GitHub Copilot、OpenAI Codex） |
-| 安装步骤 | 仅安装编辑器 | 安装编辑器 + 插件                  |
-| 可定制性 | 标准选项     | 广泛的插件生态系统                 |
+| 功能     | Cursor       | VSCode + 插件                      | 通义灵码 Lingma IDE |
+| -------- | ------------ | ---------------------------------- | ------------------- |
+| 内置 AI  | 是           | 否（需要安装插件）                 | 是                  |
+| 命令支持 | 斜杠命令     | 是（GitHub Copilot、OpenAI Codex） | @ 命令              |
+| 安装步骤 | 仅安装编辑器 | 安装编辑器 + 插件                  | 仅安装编辑器        |
+| 国内访问 | 可能需要VPN  | 取决于插件                         | 专为国内优化        |
+| 可定制性 | 标准选项     | 广泛的插件生态系统                 | 标准选项            |
 
 ## 步骤 1：Fork 并克隆仓库
 

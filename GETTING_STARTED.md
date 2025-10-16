@@ -8,9 +8,11 @@ Before starting, you'll need to install the following tools:
 
 - **Python 3.12 or higher** - [Download Python](https://www.python.org/downloads/)
 - **Git** - Version control system [Download Git](https://git-scm.com/downloads)
-- **Code Editor with AI** - Choose one:
-  - [Cursor](https://www.cursor.com/) (AI built-in)
+- **AI Code Editor** - Choose one:
+  - [Cursor](https://www.cursor.com/) (Recommended, AI built-in)
+  - [Claude Code](https://claude.com/product/claude-code) (AI-powered development tool)
   - [Visual Studio Code](https://code.visualstudio.com/) + AI Extensions
+  - [Lingma IDE](https://lingma.aliyun.com/download) (For China users, when Claude Code/Cursor models are not accessible)
 - **UV Package Manager** - Fast Python package installer [UV Documentation](https://docs.astral.sh/uv/)
   - Recommended over pip for better performance
   - Installation instructions provided below
@@ -160,14 +162,52 @@ If you're already using VSCode or prefer it, you can add AI capabilities through
 
 ---
 
+**Option C: Lingma IDE** (For China Users)
+
+Lingma IDE is an AI-powered development tool by Alibaba Cloud's Tongyi team, specifically designed for Chinese users when international AI models (Claude Code/Cursor) are not accessible.
+
+**Features:**
+
+- Full integration with AI coding assistant (built-in, no plugin needed)
+- Project-level awareness and code generation
+- Inline chat and code suggestions
+- Terminal command execution
+- Memory and context awareness
+- Programming agent capabilities
+- Works well in China without VPN
+
+**Installation:**
+
+1. Visit [Lingma IDE Download Page](https://lingma.aliyun.com/download)
+2. Download the appropriate version:
+   - **macOS**: macOS 10.15+ (Both Intel and Apple Silicon)
+   - **Windows**: Windows 10/11 (x86, arm64)
+3. Install the application
+4. Open Lingma IDE and login with your Aliyun (Alibaba Cloud) account
+5. Start using AI coding features immediately
+
+**Using ARIA Commands in Lingma IDE:**
+
+Lingma IDE supports similar workflow commands like Cursor:
+
+1. Open the ARIA project folder in Lingma IDE
+2. Use the chat feature to reference ARIA command files
+3. Type `@` followed by the command file name (e.g., `@raw-data-analysis.md`)
+4. Follow the AI-guided workflow
+
+Learn more: [Lingma IDE Official Site](https://lingma.aliyun.com/download)
+
+---
+
 **Comparison:**
 
-| Feature        | Cursor              | VSCode + Extensions                |
-| -------------- | ------------------- | ---------------------------------- |
-| AI Built-in    | Yes                 | No (requires extension)            |
-| Slash Commands | Native support      | Yes (GitHub Copilot, OpenAI Codex) |
-| Setup Steps    | Install editor only | Install editor + extension         |
-| Customization  | Standard options    | Extensive plugin ecosystem         |
+| Feature        | Cursor              | VSCode + Extensions                | Lingma IDE          |
+| -------------- | ------------------- | ---------------------------------- | ------------------- |
+| AI Built-in    | Yes                 | No (requires extension)            | Yes                 |
+| Slash Commands | Native support      | Yes (GitHub Copilot, OpenAI Codex) | @ commands          |
+| Setup Steps    | Install editor only | Install editor + extension         | Install editor only |
+| China Access   | May require VPN     | Depends on extension               | Optimized for China |
+| Customization  | Standard options    | Extensive plugin ecosystem         | Standard options    |
 
 ## Step 1: Fork and Clone the Repository
 
