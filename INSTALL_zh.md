@@ -4,7 +4,7 @@
 
 ## 先决条件
 
-- Python 3.10
+- Python 3.12
 - uv（https://docs.astral.sh/uv/）
 - git
 
@@ -25,8 +25,8 @@ curl -fsSL https://astral.sh/uv/install.sh | sh
 ### 创建虚拟环境
 
 ```bash
-# 使用 Python 3.10 作为默认解释器
-uv venv --python 3.10
+# 使用 Python 3.12 作为默认解释器
+uv venv --python 3.12
 ```
 
 ### 安装默认依赖

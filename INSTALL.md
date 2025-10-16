@@ -4,7 +4,7 @@ This file provides instructions for installing the project.
 
 ## Prerequisites
 
-- Python 3.10
+- Python 3.12
 - uv(`https://docs.astral.sh/uv/`)
 - git
 
@@ -25,8 +25,8 @@ curl -fsSL https://astral.sh/uv/install.sh | sh
 ### Set up the virtual environment
 
 ```bash
-# Use python 3.10 default interpreter
-uv venv --python 3.10
+# Use python 3.12 default interpreter
+uv venv --python 3.12
 ```
 
 ### Install the default dependencies
