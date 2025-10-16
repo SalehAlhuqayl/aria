@@ -4,7 +4,7 @@
 
 ## 前置条件
 
-- Python 3.10 或更高版本
+- Python 3.12 或更高版本
 - Git
 - [Claude Code](https://claude.com/product/claude-code) 或 [Cursor](https://www.cursor.com/)
 - UV 包管理器（推荐）或 pip
@@ -14,7 +14,7 @@
 ### 方案 A：在 GitHub 上 Fork（推荐）
 
 1. 访问 [ARIA on GitHub](https://github.com/Biaoo/aria)
-2. 点击右上角的 “Fork” 按钮
+2. 点击右上角的 "Fork" 按钮
 3. 克隆你 Fork 后的仓库：
 
 ```bash
@@ -22,10 +22,32 @@ git clone https://github.com/YOUR_USERNAME/aria.git
 cd aria
 ```
 
-### 方案 B：直接克隆
+### 方案 B：在 Gitee 上 Fork（国内用户推荐）
+
+1. 访问 [ARIA on Gitee](https://gitee.com/BiaooGitee/aria)
+2. 点击右上角的 "Fork" 按钮
+3. 克隆你 Fork 后的仓库：
+
+```bash
+git clone https://gitee.com/YOUR_USERNAME/aria.git
+cd aria
+```
+
+### 方案 C：直接克隆
+
+如果不需要 Fork，可以直接从 GitHub 或 Gitee 克隆：
+
+**从 GitHub 克隆：**
 
 ```bash
 git clone https://github.com/Biaoo/aria.git
+cd aria
+```
+
+**从 Gitee 克隆：**
+
+```bash
+git clone https://gitee.com/BiaooGitee/aria.git
 cd aria
 ```
 
@@ -71,17 +93,21 @@ mkdir -p data/output/{models,results,figures,logs}
 ## 研究背景
 
 ### 领域介绍（可选）
+
 [说明研究所属领域以及该问题的重要性]
 
 ### 研究动机（可选）
+
 [阐述研究必要性与拟填补的空白]
 
 ## 研究目标（可选）
 
 ### 总体目标（可选）
+
 [写出研究的核心目标]
 
 ### 具体目标（可选）
+
 1. [第一个具体目标]
 2. [第二个具体目标]
 3. [第三个具体目标]
@@ -89,12 +115,14 @@ mkdir -p data/output/{models,results,figures,logs}
 ## 原始数据说明
 
 ### 数据来源
+
 - 来源：[数据来源 - 数据库、实验、调查等]
 - 采集方式：[数据采集方法]
 - 时间范围：[数据采集时间]
 - 地理范围：[如适用]
 
 ### 数据特征
+
 - 文件格式：[CSV、JSON、Excel、图像等]
 - 文件数量：[数据文件数量]
 - 总体积：[文件大小]
@@ -102,6 +130,7 @@ mkdir -p data/output/{models,results,figures,logs}
 - 特征数：[变量/列数]
 
 ### 数据结构
+
 - 主键字段：[唯一标识字段]
 - 特征类型：[数值、类别、文本等]
 - 目标变量：[若为监督学习]

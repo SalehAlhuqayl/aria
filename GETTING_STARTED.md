@@ -4,7 +4,7 @@ This guide will walk you through the complete process of using ARIA (Automated R
 
 ## Prerequisites
 
-- Python 3.10 or higher
+- Python 3.12 or higher
 - Git
 - [Claude Code](https://claude.com/product/claude-code) or [Cursor](https://www.cursor.com/)
 - UV package manager (recommended) or pip
@@ -22,10 +22,32 @@ git clone https://github.com/YOUR_USERNAME/aria.git
 cd aria
 ```
 
-### Option B: Direct Clone
+### Option B: Fork on Gitee (For China Users)
+
+1. Visit [ARIA on Gitee](https://gitee.com/BiaooGitee/aria)
+2. Click the "Fork" button in the top-right corner
+3. Clone your forked repository:
+
+```bash
+git clone https://gitee.com/YOUR_USERNAME/aria.git
+cd aria
+```
+
+### Option C: Direct Clone
+
+If you prefer not to fork, you can directly clone from GitHub or Gitee:
+
+**From GitHub:**
 
 ```bash
 git clone https://github.com/Biaoo/aria.git
+cd aria
+```
+
+**From Gitee:**
+
+```bash
+git clone https://gitee.com/BiaooGitee/aria.git
 cd aria
 ```
 
@@ -71,17 +93,21 @@ Example structure:
 ## Research Background
 
 ### Domain Introduction (optional)
+
 [Describe the field/domain of your research, why this problem is important]
 
 ### Research Motivation (optional)
+
 [Why this research is needed, what gaps it addresses]
 
 ## Research Objectives (optional)
 
 ### Primary Goal (optional)
+
 [Main objective of your research]
 
 ### Specific Aims (optional)
+
 1. [First specific aim]
 2. [Second specific aim]
 3. [Third specific aim]
@@ -89,12 +115,14 @@ Example structure:
 ## Raw Data Description
 
 ### Data Source
+
 - Origin: [Where the data comes from - database, experiment, survey, etc.]
 - Collection Method: [How the data was collected]
 - Time Period: [When the data was collected]
 - Geographic Scope: [If applicable]
 
 ### Data Characteristics
+
 - File Format: [CSV, JSON, Excel, images, etc.]
 - Number of Files: [How many data files]
 - Total Size: [File sizes]
@@ -102,6 +130,7 @@ Example structure:
 - Feature Count: [Number of variables/columns]
 
 ### Data Structure
+
 - Primary Keys: [Unique identifiers]
 - Feature Types: [Numerical, categorical, text, etc.]
 - Target Variable: [If supervised learning]
