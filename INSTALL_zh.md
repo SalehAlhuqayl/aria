@@ -35,6 +35,12 @@ uv venv --python 3.10
 uv add numpy openpyxl pandas scikit-learn joblib matplotlib seaborn xgboost gradio
 ```
 
+（可选）如需使用清华镜像加速安装：
+
+```bash
+UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple uv add numpy openpyxl pandas scikit-learn joblib matplotlib seaborn xgboost gradio
+```
+
 ### 同步依赖
 
 ```bash
