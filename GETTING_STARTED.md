@@ -388,11 +388,17 @@ ARIA uses AI workflow commands to automate the research process. Commands are lo
 
 ### Execute the Workflow
 
-Follow these steps in sequence using Cursor:
+Follow these steps in sequence:
+
+> **Note for Lingma IDE Users:**  
+> If you're using Lingma IDE, use `@filename` instead of `/` commands.  
+> For example: `@raw-data-analysis.md` instead of selecting from `/` menu.
+
+**For Cursor/VSCode + AI Extensions:**
 
 1. **Analyze Raw Data**
 
-   In the Cursor chat, type `/` and select `raw-data-analysis.md`
+   In the chat, type `/` and select `raw-data-analysis.md`
 
    This analyzes your raw data and creates `docs/02-raw-data-analysis.md`
 
@@ -457,7 +463,8 @@ ruff format src/
 
 Use the intelligent Git commit command:
 
-Type `/` in Cursor chat and select `git-commit.md`
+- **Cursor/VSCode + AI Extensions:** Type `/` and select `git-commit.md`
+- **Lingma IDE:** Type `@git-commit.md`
 
 This automatically creates structured commits and can batch large changes.
 
@@ -504,8 +511,11 @@ Here's a complete example using the classic Iris dataset:
    EOF
    ```
 
-3. **Run AI workflow in Cursor**:
-   Open Cursor and execute commands in sequence by typing `/` in chat:
+3. **Run AI workflow**:
+
+   **Using Cursor/VSCode + AI Extensions:**
+
+   Open your editor and execute commands in sequence by typing `/` in chat:
    - Select `raw-data-analysis.md`
    - Select `preprocess.md`
    - Select `research-plan.md`
@@ -513,6 +523,17 @@ Here's a complete example using the classic Iris dataset:
    - Select `run-experiments.md`
    - Select `experiment-analysis.md`
    - Select `research-report.md`
+
+   **Using Lingma IDE:**
+
+   Type `@` followed by each command file in sequence:
+   - `@raw-data-analysis.md`
+   - `@preprocess.md`
+   - `@research-plan.md`
+   - `@code-implementation.md`
+   - `@run-experiments.md`
+   - `@experiment-analysis.md`
+   - `@research-report.md`
 
 ## Troubleshooting
 

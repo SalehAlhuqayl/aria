@@ -388,11 +388,17 @@ ARIA 通过 AI 工作流命令自动化研究过程，命令位于 `.claude/comm
 
 ### 执行工作流
 
-在 Cursor 中依次执行以下步骤：
+依次执行以下步骤：
+
+> **通义灵码 Lingma IDE 用户注意：**  
+> 如果使用 Lingma IDE，请使用 `@文件名` 方式代替 `/` 命令。  
+> 例如：输入 `@raw-data-analysis.md` 而不是从 `/` 菜单中选择。
+
+**Cursor/VSCode + AI 插件用户：**
 
 1. **分析原始数据**
 
-   在 Cursor 对话框中输入 `/` 并选择 `raw-data-analysis.md`
+   在对话框中输入 `/` 并选择 `raw-data-analysis.md`
 
    分析原始数据并生成 `docs/02-raw-data-analysis.md`
 
@@ -457,7 +463,8 @@ ruff format src/
 
 使用智能 Git 提交命令：
 
-在 Cursor 对话框中输入 `/` 并选择 `git-commit.md`
+- **Cursor/VSCode + AI 插件：** 输入 `/` 并选择 `git-commit.md`
+- **通义灵码 Lingma IDE：** 输入 `@git-commit.md`
 
 该命令会自动生成结构化提交，可在文件较多时批量处理。
 
@@ -504,8 +511,11 @@ ruff format src/
    EOF
    ```
 
-3. **在 Cursor 中执行 AI 工作流**：
-   打开 Cursor，在对话框中输入 `/` 并依次选择：
+3. **执行 AI 工作流**：
+
+   **使用 Cursor/VSCode + AI 插件：**
+
+   打开编辑器，在对话框中输入 `/` 并依次选择：
    - 选择 `raw-data-analysis.md`
    - 选择 `preprocess.md`
    - 选择 `research-plan.md`
@@ -513,6 +523,17 @@ ruff format src/
    - 选择 `run-experiments.md`
    - 选择 `experiment-analysis.md`
    - 选择 `research-report.md`
+
+   **使用通义灵码 Lingma IDE：**
+
+   依次输入 `@` 后跟命令文件名：
+   - `@raw-data-analysis.md`
+   - `@preprocess.md`
+   - `@research-plan.md`
+   - `@code-implementation.md`
+   - `@run-experiments.md`
+   - `@experiment-analysis.md`
+   - `@research-report.md`
 
 ## 故障排查
 
