@@ -50,6 +50,12 @@ git --version
 
 #### 2. Install Python
 
+Choose one of the following methods:
+
+---
+
+**Option A: Direct Installation**
+
 **Windows:**
 
 - Download from [python.org](https://www.python.org/downloads/)
@@ -76,6 +82,68 @@ Verify installation:
 ```bash
 python3 --version  # Should show 3.12 or higher
 ```
+
+---
+
+**Option B: Using pyenv (Recommended for managing multiple Python versions)**
+
+pyenv allows you to easily install and switch between multiple Python versions.
+
+**macOS/Linux Installation:**
+
+```bash
+# Install pyenv
+curl https://pyenv.run | bash
+
+# Add to shell configuration (~/.bashrc, ~/.zshrc, or ~/.bash_profile)
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+
+# Reload shell configuration
+source ~/.zshrc  # or source ~/.bashrc
+```
+
+**Windows Installation:**
+
+Use [pyenv-win](https://github.com/pyenv-win/pyenv-win):
+
+```powershell
+# Install using PowerShell
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+```
+
+**Install Python 3.12 with pyenv:**
+
+```bash
+# List available Python versions
+pyenv install --list | grep 3.12
+
+# Install Python 3.12 (choose latest 3.12.x version)
+pyenv install 3.12.7
+
+# Set as global default
+pyenv global 3.12.7
+
+# Or set for this project only
+pyenv local 3.12.7
+```
+
+**Verify installation:**
+
+```bash
+python --version  # Should show 3.12.x
+pyenv versions    # Shows all installed Python versions
+```
+
+**Benefits of pyenv:**
+
+- Easy switching between Python versions
+- Project-specific Python versions
+- No need for sudo/admin rights
+- Clean uninstallation
+
+Learn more: [pyenv GitHub](https://github.com/pyenv/pyenv)
 
 #### 3. Install UV Package Manager
 
@@ -547,13 +615,30 @@ Here's a complete example using the classic Iris dataset:
    - Windows: Reinstall Python and check "Add Python to PATH"
    - macOS/Linux: Try `python3` instead of `python`
    - Verify with: `python --version` or `python3 --version`
+   - If using pyenv: Run `pyenv versions` to check installed versions
 
-3. **UV not found**:
+3. **pyenv issues**:
+   - **Command not found**: Restart terminal or add pyenv to PATH in shell config
+   - **Build failed**: Install required dependencies:
+
+     ```bash
+     # macOS
+     brew install openssl readline sqlite3 xz zlib
+
+     # Ubuntu/Debian
+     sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+     libncurses5-dev libncursesw5-dev xz-utils tk-dev
+     ```
+
+   - **Wrong Python version active**: Use `pyenv global 3.12.7` or `pyenv local 3.12.7`
+
+4. **UV not found**:
    - Close and reopen your terminal after installation
    - Check if UV is in PATH: `echo $PATH` (macOS/Linux) or `echo %PATH%` (Windows)
    - Try reinstalling: [UV Installation Guide](https://docs.astral.sh/uv/getting-started/installation/)
 
-4. **Permission denied errors**:
+5. **Permission denied errors**:
    - macOS/Linux: You may need to use `sudo` for system-wide installations
    - Windows: Run PowerShell or Command Prompt as Administrator
 

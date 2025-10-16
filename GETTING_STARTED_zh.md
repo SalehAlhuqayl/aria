@@ -50,6 +50,12 @@ git --version
 
 #### 2. 安装 Python
 
+选择以下方法之一：
+
+---
+
+**方案 A：直接安装**
+
 **Windows：**
 
 - 从 [python.org](https://www.python.org/downloads/) 下载安装包
@@ -76,6 +82,68 @@ sudo apt-get install python3.12 python3.12-venv
 ```bash
 python3 --version  # 应显示 3.12 或更高版本
 ```
+
+---
+
+**方案 B：使用 pyenv（推荐用于管理多个 Python 版本）**
+
+pyenv 可以让你轻松安装和切换多个 Python 版本。
+
+**macOS/Linux 安装：**
+
+```bash
+# 安装 pyenv
+curl https://pyenv.run | bash
+
+# 添加到 shell 配置文件（~/.bashrc、~/.zshrc 或 ~/.bash_profile）
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+
+# 重新加载 shell 配置
+source ~/.zshrc  # 或 source ~/.bashrc
+```
+
+**Windows 安装：**
+
+使用 [pyenv-win](https://github.com/pyenv-win/pyenv-win)：
+
+```powershell
+# 使用 PowerShell 安装
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+```
+
+**使用 pyenv 安装 Python 3.12：**
+
+```bash
+# 列出可用的 Python 版本
+pyenv install --list | grep 3.12
+
+# 安装 Python 3.12（选择最新的 3.12.x 版本）
+pyenv install 3.12.7
+
+# 设置为全局默认版本
+pyenv global 3.12.7
+
+# 或仅为当前项目设置
+pyenv local 3.12.7
+```
+
+**验证安装：**
+
+```bash
+python --version  # 应显示 3.12.x
+pyenv versions    # 显示所有已安装的 Python 版本
+```
+
+**pyenv 的优势：**
+
+- 轻松切换 Python 版本
+- 项目级别的 Python 版本管理
+- 无需 sudo/管理员权限
+- 干净的卸载方式
+
+了解更多：[pyenv GitHub](https://github.com/pyenv/pyenv)
 
 #### 3. 安装 UV 包管理器
 
@@ -547,13 +615,30 @@ ruff format src/
    - Windows：重新安装 Python 并勾选 "Add Python to PATH"
    - macOS/Linux：尝试使用 `python3` 而非 `python`
    - 验证：`python --version` 或 `python3 --version`
+   - 如果使用 pyenv：运行 `pyenv versions` 检查已安装版本
 
-3. **找不到 UV**：
+3. **pyenv 相关问题**：
+   - **找不到命令**：重启终端或在 shell 配置中添加 pyenv 到 PATH
+   - **构建失败**：安装必要依赖：
+
+     ```bash
+     # macOS
+     brew install openssl readline sqlite3 xz zlib
+
+     # Ubuntu/Debian
+     sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+     libncurses5-dev libncursesw5-dev xz-utils tk-dev
+     ```
+
+   - **Python 版本不正确**：使用 `pyenv global 3.12.7` 或 `pyenv local 3.12.7`
+
+4. **找不到 UV**：
    - 安装后关闭并重新打开终端
    - 检查 UV 是否在 PATH 中：`echo $PATH` (macOS/Linux) 或 `echo %PATH%` (Windows)
    - 尝试重新安装：[UV 安装指南](https://docs.astral.sh/uv/getting-started/installation/)
 
-4. **权限被拒绝错误**：
+5. **权限被拒绝错误**：
    - macOS/Linux：系统级安装可能需要使用 `sudo`
    - Windows：以管理员身份运行 PowerShell 或命令提示符
 
