@@ -1,14 +1,13 @@
 [project]
-name = "aria"
+name = "usedcar-sa-pricing"
 version = "0.1.0"
-description = "ARIA - Automated Research Intelligence Assistant: A rapid scaffold for scientific data analysis, visualization, and reporting."
+description = "Code and manuscript for used car price modeling in Saudi Arabia"
 readme = "README.md"
 requires-python = ">=3.12"
 authors = [
-    { name = "Biao Luo", email = "biao00luo@gmail.com" }
+    { name = "Saleh alhuqayl" }
 ]
 dependencies = [
-    "gradio>=5.47.2",
     "joblib>=1.5.2",
     "matplotlib>=3.10.6",
     "numpy>=2.2.6",
@@ -17,4 +16,5 @@ dependencies = [
     "scikit-learn>=1.7.2",
     "seaborn>=0.13.2",
     "xgboost>=3.0.5",
+    "markdown>=3.7",
 ]

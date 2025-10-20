@@ -18,13 +18,13 @@ Simple distributional checks show right-skew in prices and broad mileage spread,
 Our work demonstrates that a compact, reproducible ML pipeline can deliver high accuracy using standard features and minimal tuning. With the full dataset (≈35k rows) and further hyperparameter search, the system can improve and generalize more broadly. The approach is easily transferable to other regions with minor adaptation to categorical encodings and business rules.
 
 # Figures
-![Price Distribution](../data/output/figures/hist_Price.png)
+![Price Distribution](../output/paper/figures/hist_Price.png)
 
-![Mileage Distribution](../data/output/figures/hist_Mileage.png)
+![Mileage Distribution](../output/paper/figures/hist_Mileage.png)
 
-![Year Distribution](../data/output/figures/hist_Year.png)
+![Year Distribution](../output/paper/figures/hist_Year.png)
 
-![Price vs Mileage](../data/output/figures/scatter_Mileage_vs_Price.png)
+![Price vs Mileage](../output/paper/figures/scatter_Mileage_vs_Price.png)
 
 # Methods
 ## Data
