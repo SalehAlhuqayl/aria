@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Used Car Prices in Saudi Arabia - Manuscript</title>
+<style>
+body { font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+h1, h2, h3 { margin-top: 1.6rem; }
+table { border-collapse: collapse; }
+th, td { border: 1px solid #ddd; padding: 6px 8px; }
+img { max-width: 100%; height: auto; }
+code { background: #f6f8fa; padding: 2px 4px; border-radius: 4px; }
+pre code { display: block; padding: 8px; }
+</style>
+</head>
+<body>
+<h1 id="title">Title</h1>
+<p>Machine Learning Reveals Determinants of Used Car Prices in Saudi Arabia</p>
+<h1 id="author-information">Author Information</h1>
+<p>Saleh alhuqayl
+Correspondence: email saleh@alhuqayl.com</p>
+<h1 id="abstract">Abstract</h1>
+<p>Transparent pricing in the used car market is essential for buyers, sellers, and policy makers. We analyze a curated dataset of 5,482 used car listings from Saudi Arabia to model prices and quantify the role of brand, model type, year, mileage, and region. After standardized preprocessing, we benchmark linear and non-linear models. XGBoost achieves the best test performance (RMSE 13,728 SAR; R^2 0.965), indicating substantial non-linear effects. Mileage and vehicle age strongly influence price, with brand and model type providing additional signal. Our results show that a simple, reproducible pipeline can deliver accurate price predictions and interpretable insights, laying the groundwork for fairer, data-driven valuation in regional auto markets.</p>
+<h1 id="main-text">Main Text</h1>
+<p>Demand for transparent valuation in used car markets is growing rapidly, driven by digital platforms and heightened consumer expectations. Pricing varies with brand, model, age, usage, and geographic factors, but publicly-available valuation tools often lag local market dynamics. We investigate the Saudi Arabian used car market using structured listings containing core attributes (make, model type, year, mileage, region, fuel, gear type, engine size, options), and two engineered variables (vehicle age and price per kilometer). We standardize text fields, resolve invalid values, and remove rows with missing target values.</p>
+<p>We evaluate linear baselines (Ridge, Lasso) and non-linear models (Random Forest, XGBoost) using a consistent split with quantile-binned stratification on the target to stabilize regression splits. The best-performing model (XGBoost) achieves RMSE 13,728 SAR and R^2 0.965 on the held-out test set, substantially outperforming linear baselines (RMSE ~40,800; R^2 ~0.69) and Random Forest (RMSE 17,172; R^2 0.945). These results indicate that non-linear interactions—especially among mileage, vehicle age, brand, and model type—are crucial for accurate pricing.</p>
+<p>Simple distributional checks show right-skew in prices and broad mileage spread, motivating transformations for linear models and robust handling of outliers. Scatter plots confirm a negative relationship between mileage and price. We recommend XGBoost as the primary model and propose adding SHAP-based explanations to quantify the marginal effect of top features and to validate fairness across brands and regions.</p>
+<p>Our work demonstrates that a compact, reproducible ML pipeline can deliver high accuracy using standard features and minimal tuning. With the full dataset (≈35k rows) and further hyperparameter search, the system can improve and generalize more broadly. The approach is easily transferable to other regions with minor adaptation to categorical encodings and business rules.</p>
+<h1 id="figures">Figures</h1>
+<p><img alt="Price Distribution" src="figures/hist_Price.png" /></p>
+<p><img alt="Mileage Distribution" src="figures/hist_Mileage.png" /></p>
+<p><img alt="Year Distribution" src="figures/hist_Year.png" /></p>
+<p><img alt="Price vs Mileage" src="figures/scatter_Mileage_vs_Price.png" /></p>
+<h1 id="methods">Methods</h1>
+<h2 id="data">Data</h2>
+<p>We use <code>data/processed/usedcars_clean.csv</code> (5,482 rows, 15 columns) derived from raw listings. We standardize string fields, remove invalid <code>Price</code> (=0), bound plausible <code>Year</code> and <code>Mileage</code>, and add <code>Vehicle_Age</code> and <code>Price_per_km</code>.</p>
+<h2 id="preprocessing">Preprocessing</h2>
+<p>Categoricals are one-hot encoded (with a limit on high-cardinality features), and numeric features are standardized for linear models. We split data into train/validation/test with a fixed random seed (42), approximating stratification via target quantile bins.</p>
+<h2 id="models">Models</h2>
+<p>Ridge and Lasso regression form baselines. Random Forest and XGBoost capture non-linearities. All models are implemented as <code>sklearn</code> Pipelines with a shared preprocessing block; XGBoost uses histogram-based trees.</p>
+<h2 id="evaluation">Evaluation</h2>
+<p>We report RMSE, MAE, and R^2 on validation and test splits. Final test results are shown in the table below.</p>
+<h1 id="results-table-test-set">Results Table (Test Set)</h1>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: right;">RMSE (SAR)</th>
+<th style="text-align: right;">MAE (SAR)</th>
+<th style="text-align: right;">R^2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ridge</td>
+<td style="text-align: right;">40,756</td>
+<td style="text-align: right;">23,598</td>
+<td style="text-align: right;">0.689</td>
+</tr>
+<tr>
+<td>Lasso</td>
+<td style="text-align: right;">40,833</td>
+<td style="text-align: right;">23,596</td>
+<td style="text-align: right;">0.688</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td style="text-align: right;">17,172</td>
+<td style="text-align: right;">6,457</td>
+<td style="text-align: right;">0.945</td>
+</tr>
+<tr>
+<td>XGBoost</td>
+<td style="text-align: right;">13,728</td>
+<td style="text-align: right;">5,432</td>
+<td style="text-align: right;">0.965</td>
+</tr>
+</tbody>
+</table>
+<h1 id="computational-details">Computational Details</h1>
+<p>Experiments run on CPU with Python 3.12. Core libraries: pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn, joblib. Code and scripts are organized under <code>src/</code> and <code>scripts/</code>. Models, metrics, and figures are saved under <code>output/</code> and mirrored to <code>data/output/</code>.</p>
+<h1 id="code-availability">Code Availability</h1>
+<p>Code is included in this repository under <code>src/</code> and <code>scripts/</code>.</p>
+</body>
+</html>

@@ -1,0 +1,171 @@
+{
+  "row_count": 5482,
+  "column_count": 15,
+  "columns": {
+    "Make": {
+      "dtype": "object",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 57,
+      "example_values": [
+        "Chrysler",
+        "Nissan",
+        "Hyundai"
+      ]
+    },
+    "Type": {
+      "dtype": "object",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 349,
+      "example_values": [
+        "C300",
+        "Sunny",
+        "Elantra"
+      ]
+    },
+    "Year": {
+      "dtype": "Int64",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 32,
+      "example_values": [
+        "2018",
+        "2019",
+        "2019"
+      ]
+    },
+    "Origin": {
+      "dtype": "object",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 4,
+      "example_values": [
+        "Saudi",
+        "Saudi",
+        "Saudi"
+      ]
+    },
+    "Color": {
+      "dtype": "object",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 15,
+      "example_values": [
+        "Black",
+        "Silver",
+        "Grey"
+      ]
+    },
+    "Options": {
+      "dtype": "object",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 3,
+      "example_values": [
+        "Full",
+        "Standard",
+        "Standard"
+      ]
+    },
+    "Engine_Size": {
+      "dtype": "float64",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 69,
+      "example_values": [
+        "5.7",
+        "1.5",
+        "1.6"
+      ]
+    },
+    "Fuel_Type": {
+      "dtype": "object",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 3,
+      "example_values": [
+        "Gas",
+        "Gas",
+        "Gas"
+      ]
+    },
+    "Gear_Type": {
+      "dtype": "object",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 2,
+      "example_values": [
+        "Automatic",
+        "Automatic",
+        "Automatic"
+      ]
+    },
+    "Mileage": {
+      "dtype": "Int64",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 1714,
+      "example_values": [
+        "103000",
+        "72418",
+        "114154"
+      ]
+    },
+    "Region": {
+      "dtype": "object",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 27,
+      "example_values": [
+        "Riyadh",
+        "Riyadh",
+        "Riyadh"
+      ]
+    },
+    "Price": {
+      "dtype": "Int64",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 540,
+      "example_values": [
+        "114000",
+        "27500",
+        "43000"
+      ]
+    },
+    "Negotiable": {
+      "dtype": "bool",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 1,
+      "example_values": [
+        "False",
+        "False",
+        "False"
+      ]
+    },
+    "Vehicle_Age": {
+      "dtype": "Int64",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 32,
+      "example_values": [
+        "7",
+        "6",
+        "6"
+      ]
+    },
+    "Price_per_km": {
+      "dtype": "Float64",
+      "num_missing": 0,
+      "pct_missing": 0.0,
+      "num_unique": 4522,
+      "example_values": [
+        "1.106796",
+        "0.37974",
+        "0.376684"
+      ]
+    }
+  }
+}
